@@ -1,0 +1,10 @@
+:root {
+    --color-primary: rgb( 51.2, 126.4, 204);
+    --color-background: rgb( 51.2, 126.4, 204);
+    --color-text: white;
+
+
+    /* container */
+    --container-width: 1420px;
+    --container-padding: 1rem;
+}

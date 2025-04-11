@@ -1,0 +1,31 @@
+html, body, #root {
+    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.4;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    padding: 0 var(--container-padding);
+    margin: 0 auto;
+}
+
+main {
+    flex: 1;
+    padding-bottom: 4rem;
+}
