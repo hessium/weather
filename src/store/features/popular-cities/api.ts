@@ -13,7 +13,6 @@ export const fetchPopularCities = createAsyncThunk(
         if (!response.ok) throw new Error(`Ошибка для ${city}`);
         return (await response.json()) as CityWeatherApiResponse;
       });
-
       return await Promise.all(requests);
     } catch (error: any) {
       return rejectWithValue(error.message);

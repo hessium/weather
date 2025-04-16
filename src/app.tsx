@@ -1,14 +1,22 @@
 import { AppHeader } from './components/app-header/app-header.tsx';
-import { WeatherWidget } from './components/weather-widget/weather-widget.tsx';
+import { WeatherCity } from './components/weather-city/weather-city.tsx';
 import { PopularCities } from './components/popular-cities/popular-cities.tsx';
+import { MainLayout } from './containers/main-layout/main-layout.tsx';
+import { MainSection } from './containers/main-section/main-section.tsx';
+import { WeatherEffects } from './components/weather-effects/weather-effects.tsx';
 
 function App() {
   return (
-    <main>
+    <MainLayout>
+      <WeatherEffects />
       <AppHeader />
-      <WeatherWidget />
-      <PopularCities />
-    </main>
+      <MainSection>
+        <WeatherCity />
+      </MainSection>
+      <MainSection>
+        <PopularCities />
+      </MainSection>
+    </MainLayout>
   );
 }
 

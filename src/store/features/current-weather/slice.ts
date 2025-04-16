@@ -5,6 +5,7 @@ import { fetchCurrentWeather } from './api';
 const initialState: CurrentWeatherState = {
   city: 'Казань',
   selectedType: 'hourly',
+  currentWeather: null,
   hourlyWeather: [],
   weeklyWeather: [],
   isLoading: false,
@@ -48,6 +49,7 @@ const currentWeatherSlice = createSlice({
 
         state.hourlyWeather = forecasts.slice(0, 8);
         state.weeklyWeather = filterWeeklyForecast(forecasts);
+        state.currentWeather = forecasts.length > 0 ? forecasts[0] : null;
         state.city = action.payload.city.name;
         state.isLoading = false;
       })

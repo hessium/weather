@@ -9,6 +9,7 @@ export interface WeatherEntry {
 export interface CurrentWeatherState {
   city: string;
   selectedType: 'hourly' | 'weekly';
+  currentWeather: WeatherEntry | null;
   hourlyWeather: WeatherEntry[];
   weeklyWeather: WeatherEntry[];
   isLoading: boolean;

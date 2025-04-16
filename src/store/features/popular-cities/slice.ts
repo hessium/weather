@@ -71,7 +71,7 @@ const popularCitiesSlice = createSlice({
           return updated
             ? {
                 ...city,
-                temp: updated.main.temp.toFixed(1),
+                temp: updated.main.temp,
                 weather: updated.weather[0].description,
                 icon: updated.weather[0].icon,
                 humidity: updated.main.humidity,
