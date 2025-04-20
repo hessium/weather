@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { WeatherApiResponse } from './types';
 
-const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+const API_KEY = 'b388f37914cf32f8d8acc70ceaf53240';
 
 export const fetchCurrentWeather = createAsyncThunk(
   'currentWeather/fetch',
