@@ -74,24 +74,22 @@ export const WeatherCity = () => {
 
   return (
     <div className="w-full">
-      <h1 className="text-3xl font-semibold  mb-2">
-        Погода в городе {city}
-      </h1>
+      <h1 className="text-3xl font-semibold  mb-2">Погода в городе {city}</h1>
 
       <div className="flex justify-between flex-wrap gap-4">
         {selectedType === 'hourly' ? (
           <>
             {currentWeather && (
-              <div className="w-full lg:max-w-xs">
+              <div className="w-full lg:max-w-xs h-fit bg-cyan-500 p-4 rounded-lg">
                 <div className="text-2xl font-semibold mb-4">
                   {getCurrentDate}
                 </div>
                 <CurrentWeatherCard data={currentWeather} />
               </div>
             )}
-            <div className="overflow-x-auto rounded-lg border border-gray-200 w-full lg:max-w-2xl">
+            <div className="overflow-x-auto rounded-lg border border-transparent w-full lg:max-w-2xl">
               <table className="w-full">
-                <tbody className="divide-y divide-gray-200">
+                <tbody className="bg-cyan-500">
                   {hourlyWeather.map((item) => (
                     <HourlyForecastRow key={item.dt} data={item} />
                   ))}

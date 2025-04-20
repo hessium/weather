@@ -14,175 +14,74 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-
-html {
-    scrollbar-gutter: stable;
-}
-
 html, body, #root {
     width: 100%;
     overflow-x: hidden;
     min-height: 100dvh;
 }
 
-/* Общие стили для фонов */
 body {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out;
+    transition: background-image 1s ease-in-out,  background-color 1s ease-in-out;
+    will-change: background-color, background-image;
+    color: #1e293b;
 }
 
-/* Стили для фонов в зависимости от погоды и времени суток */
-/* Светлые фоны (день) */
 body.bg-default-day {
     background-color: #e0f2fe;
     background-image: linear-gradient(to bottom, #e0f2fe, #bae6fd);
-    color: #0f172a;
 }
 
 body.bg-clear-day {
     background-color: #bae6fd;
     background-image: linear-gradient(to bottom, #7dd3fc, #38bdf8);
-    color: #0f172a;
 }
 
 body.bg-rain-day {
     background-color: #64748b;
     background-image: linear-gradient(to bottom, #94a3b8, #64748b);
-    color: #f8fafc;
 }
 
 body.bg-snow-day {
     background-color: #f8fafc;
     background-image: linear-gradient(to bottom, #f1f5f9, #e2e8f0);
-    color: #0f172a;
 }
 
 body.bg-fog-day {
     background-color: #cbd5e1;
     background-image: linear-gradient(to bottom, #cbd5e1, #94a3b8);
-    color: #0f172a;
 }
 
 body.bg-cloudy-day {
     background-color: #e2e8f0;
     background-image: linear-gradient(to bottom, #f1f5f9, #cbd5e1);
-    color: #0f172a;
 }
 
-/* Темные фоны (ночь) */
 body.bg-default-night {
     background-color: #0f172a;
     background-image: linear-gradient(to bottom, #1e293b, #0f172a);
-    color: #f8fafc;
 }
 
 body.bg-clear-night {
     background-color: #020617;
     background-image: linear-gradient(to bottom, #0f172a, #020617);
-    color: #f8fafc;
 }
 
 body.bg-rain-night {
     background-color: #1e293b;
     background-image: linear-gradient(to bottom, #334155, #1e293b);
-    color: #f8fafc;
 }
 
 body.bg-snow-night {
     background-color: #1e293b;
     background-image: linear-gradient(to bottom, #334155, #1e293b);
-    color: #f8fafc;
 }
 
 body.bg-fog-night {
     background-color: #475569;
     background-image: linear-gradient(to bottom, #64748b, #475569);
-    color: #f8fafc;
 }
 
 body.bg-cloudy-night {
     background-color: #334155;
     background-image: linear-gradient(to bottom, #475569, #334155);
-    color: #f8fafc;
 }
-
-/* Общие стили для темной темы */
-body[class*="-night"] {
-    color: #f8fafc;
-}
-
-body[class*="-night"] a {
-    color: #93c5fd;
-}
-
-body[class*="-night"] h1,
-body[class*="-night"] h2,
-body[class*="-night"] h3,
-body[class*="-night"] h4,
-body[class*="-night"] h5,
-body[class*="-night"] h6 {
-    color: #f1f5f9;
-}
-
-body[class*="-night"] input,
-body[class*="-night"] select,
-body[class*="-night"] textarea {
-    color: #f8fafc;
-    background-color: rgba(30, 41, 59, 0.5);
-    border-color: #475569;
-}
-
-body[class*="-night"] button:not(.custom-button) {
-    color: #f8fafc;
-}
-
-body[class*="-night"] p {
-    color: #e2e8f0;
-}
-
-.theme-transition * {
-    transition: 0.3s ease-in-out;
-}
-
-/* Анимации для разных погодных эффектов */
-.rain-effect {
-    animation: rainAnimation 0.5s infinite linear;
-}
-
-@keyframes rainAnimation {
-    from { background-position: 0 0; }
-    to { background-position: 20px 20px; }
-}
-
-/* Анимации для лоадеров */
-@keyframes fall {
-    0% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(100vh);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.7;
-        transform: scale(0.9);
-    }
-}
-

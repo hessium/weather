@@ -1,6 +1,6 @@
 .rain-loader {
-    width: 180px;
-    height: 140px;
+    width: 280px;
+    height: 240px;
     display: block;
     margin: 0 auto 20px;
     background-image: radial-gradient(circle 25px at 25px 25px, #FFF 100%, transparent 0), radial-gradient(circle 50px at 50px 50px, #FFF 100%, transparent 0), radial-gradient(circle 25px at 25px 25px, #FFF 100%, transparent 0), radial-gradient(circle 15px at 15px 15px, #FFF 100%, transparent 0), linear-gradient(#FFF 50px, transparent 0);

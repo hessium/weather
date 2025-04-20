@@ -37,7 +37,7 @@ export const PopularCities = memo(() => {
       </h2>
 
       <motion.div
-        className="2xl:gap-5 grid grid-cols-2 lg:grid-cols-3 gap-[37px] mt-8 relative overflow-hidden w-full"
+        className="2xl:gap-5 grid grid-cols-2 lg:grid-cols-3 gap-[37px] mt-8 relative w-full"
         initial="hidden"
         animate="visible"
         variants={{
@@ -75,17 +75,19 @@ export const PopularCities = memo(() => {
               y: -5,
               transition: { duration: 0.2 },
             }}
-            className="cursor-pointer text-center p-[25px] flex flex-col items-center bg-[#eeeded1a] rounded-lg will-change-[transform,opacity] origin-bottom"
+            className="cursor-pointer text-center p-[25px] flex flex-col hover:bg-cyan-600 items-center bg-cyan-500 rounded-lg will-change-[transform,opacity] origin-bottom"
             onClick={() => dispatch(setCity(popularCity.name))}
           >
-            <div className="">{popularCity?.name}</div>
+            <div className="text-2xl font-bold">{popularCity?.name}</div>
             <div className="">{popularCity?.weather}</div>
             <img
               className={'size-32'}
               src={`https://openweathermap.org/img/wn/${popularCity.icon}@2x.png`}
               alt="Иконка погоды"
             />
-            <div>{formatNumber(Number(popularCity?.temp))}°</div>
+            <div className="text-3xl font-bold">
+              {formatNumber(Number(popularCity?.temp))}°
+            </div>
             <div>Влажность {popularCity?.humidity}</div>
           </motion.div>
         ))}

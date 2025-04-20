@@ -8,7 +8,7 @@ type HourlyForecastRowProps = {
 };
 
 export const HourlyForecastRow = ({ data }: HourlyForecastRowProps) => (
-  <tr className="border-b border-gray-200 transition-colors">
+  <tr className="border-b border-gray-200 transition-colors last-of-type:border-none">
     <td className="px-2 py-3">
       <div className="flex text-center flex-col">
         <span className="text-sm font-medium">{getFormatTime(data.dt)}</span>
@@ -28,9 +28,7 @@ export const HourlyForecastRow = ({ data }: HourlyForecastRowProps) => (
     <td className="px-2 py-3 text-sm capitalize">
       {data.weather[0].description}
     </td>
-    <td className="px-2 py-3 text-sm ">
-      {formatNumber(data.wind_speed)}м/c
-    </td>
+    <td className="px-2 py-3 text-sm ">{formatNumber(data.wind_speed)}м/c</td>
     <td className="px-2 py-3 text-sm ">{data.humidity}%</td>
   </tr>
 );
