@@ -7,8 +7,8 @@ import { POPULAR_CITIES } from '../../shared/constants/popular-cities.ts';
 import { HourlyForecastRow } from '../hourly-forecast-row/hourly-forecast-row.tsx';
 import { CurrentWeatherCard } from '../current-weather-card/current-weather-card.tsx';
 import { WeeklyForecastCard } from '../weekly-forecast-card/weekly-forecast-card.tsx';
-import { DynamicThemeLoader } from '../dynamic-theme-loader/dynamic-theme-loader.tsx';
 import { useTheme } from '../../shared/hooks/useTheme.ts';
+import { Spinner } from '../../shared/UI/spinner/spinner.tsx';
 
 export const WeatherCity = () => {
   const dispatch = useAppDispatch();
@@ -65,7 +65,7 @@ export const WeatherCity = () => {
     };
   }, [dispatch]);
 
-  if (isLoading) return <DynamicThemeLoader />;
+  if (isLoading) return <Spinner />;
 
   if (error)
     return (

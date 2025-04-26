@@ -54,21 +54,19 @@ export const PopularCities = memo(() => {
         {cities.map((popularCity) => (
           <motion.div
             key={popularCity.name}
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: 20,
-                scale: 0.95,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: 'spring',
-                  stiffness: 100,
-                  damping: 20,
-                },
+            initial={{
+              opacity: 0,
+              y: 20,
+              scale: 0.95,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: {
+                type: 'spring',
+                stiffness: 100,
+                damping: 20,
               },
             }}
             whileHover={{
